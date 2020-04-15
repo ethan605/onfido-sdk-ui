@@ -29,11 +29,11 @@ class PageTitle extends Component {
           className={style.title}
           role="heading"
           aria-level="1"
-          aria-live="assertive"
-          tabIndex={-1}
-          ref={(node) => (this.container = node)}>
+          aria-live="assertive">
           <span
             className={style.titleSpan}
+            tabIndex={-1}
+            ref={(node) => (this.container = node)}
           >
             {title}
           </span>

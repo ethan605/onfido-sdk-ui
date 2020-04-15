@@ -18,19 +18,6 @@ export const withNavigationDisableAction = connect(null, (dispatch) => ({
 
 class NavigationBar extends Component {
 
-  componentDidMount() {
-    if (!this.props.disabled && this.backBtn) {
-      this.backBtn.setAttribute('tabindex', 2)
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    const { disabled } = this.props
-    if (disabled !== prevProps.disabled && !disabled) {
-      this.backBtn.setAttribute('tabindex', 2)
-    }
-  }
-
   render() {
     const {
       back,
@@ -48,7 +35,7 @@ class NavigationBar extends Component {
         <button
           type="button"
           aria-label={translate('back')}
-          tabIndex={disabled || isFullScreen ? null : 2}
+          tabIndex={disabled ? null : 2}
           ref={(node) => (this.backBtn = node)}
           onClick={back}
           className={classNames(style.back, {

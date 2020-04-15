@@ -30,7 +30,7 @@ class PageTitle extends Component {
           role="heading"
           aria-level="1"
           aria-live="assertive"
-          tabIndex={2}
+          tabIndex={-1}
           ref={(node) => (this.container = node)}>
           <span
             className={style.titleSpan}
@@ -39,7 +39,7 @@ class PageTitle extends Component {
           </span>
         </div>
         {subTitle && (
-          <div className={style.subTitle} role="heading" aria-level="2" tabIndex={3}>
+          <div className={style.subTitle} role="heading" aria-level="2">
             {subTitle}
           </div>
         )}
